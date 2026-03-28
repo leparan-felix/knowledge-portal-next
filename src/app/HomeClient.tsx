@@ -8,7 +8,6 @@ export default function HomeClient() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
 
-  // Memoized filtered articles to improve performance
   const filteredArticles = useMemo(() => {
     return articles.filter(article => {
       const matchesSearch =
@@ -22,8 +21,6 @@ export default function HomeClient() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8 px-4">
       <div className="max-w-4xl mx-auto">
-        
-        {/* Header */}
         <header className="mb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-1">Dashboard</h1>
           <p className="text-gray-600 text-sm">
@@ -31,14 +28,11 @@ export default function HomeClient() {
           </p>
         </header>
 
-        {/* Category Filter Pills */}
         <div className="flex flex-wrap gap-2 mb-6">
           <button
             onClick={() => setSelectedCategory('')}
             className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
-              selectedCategory === ''
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-gray-600 border border-gray-300 hover:bg-gray-50'
+              selectedCategory === '' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 border border-gray-300 hover:bg-gray-50'
             }`}
           >
             All
@@ -48,9 +42,7 @@ export default function HomeClient() {
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
-                selectedCategory === cat
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white text-gray-600 border border-gray-300 hover:bg-gray-50'
+                selectedCategory === cat ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 border border-gray-300 hover:bg-gray-50'
               }`}
             >
               {cat}
@@ -58,7 +50,6 @@ export default function HomeClient() {
           ))}
         </div>
 
-        {/* Search Bar */}
         <div className="mb-8">
           <input
             type="text"
@@ -69,7 +60,6 @@ export default function HomeClient() {
           />
         </div>
 
-        {/* Articles List */}
         <div className="space-y-6">
           {filteredArticles.length > 0 ? (
             filteredArticles.map(article => (
@@ -77,22 +67,13 @@ export default function HomeClient() {
                 key={article._id}
                 className="bg-white rounded-xl border-t-4 border-blue-500 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 p-6 border border-gray-100"
               >
-                {/* Category Badge */}
                 <span className="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full mb-3">
                   {article.category}
                 </span>
-
-                {/* Title */}
                 <h2 className="text-xl font-bold text-gray-900 mb-2">{article.title}</h2>
-
-                {/* Excerpt */}
                 <p className="text-gray-700 text-sm mb-4">{article.excerpt}</p>
-
-                {/* Actions */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-400">
-                    {new Date(article.publishedAt).toLocaleDateString()}
-                  </span>
+                  <span className="text-xs text-gray-400">{new Date(article.publishedAt).toLocaleDateString()}</span>
                   <Link
                     href={`/articles/${article.slug}`}
                     className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
