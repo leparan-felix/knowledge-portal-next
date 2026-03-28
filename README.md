@@ -1,24 +1,24 @@
-# 📘 Knowledge Portal
+#  Knowledge Portal
 
 A modern, responsive knowledge management portal built with **Next.js 16**. Features intuitive search, category filtering, and a clean, accessible UI designed for optimal content discovery.
 
-🔗 **Live Demo**: [knowledge-portal-next.vercel.app](https://knowledge-portal-next.vercel.app/) 
+ **Live Demo**: [knowledge-portal-next.vercel.app](https://knowledge-portal-next.vercel.app/) 
 (knowledge-portal-next-git-main-leparan-felix-082a0a6f.vercel.app
 knowledge-portal-next-4g0m0n3qd-leparan-felix-082a0a6f.vercel.app)*
 
 
-## ✨ Features
+##  Features
 
-- 🔍 **Real-time Search** – Filter articles by title or category instantly
-- 🏷️ **Category Filtering** – Browse by Management, Technology, Workplace, or Finance
-- 📱 **Fully Responsive** – Seamless experience on desktop, tablet, and mobile
-- 🎨 **Modern UI/UX** – Polished design with smooth hover effects and transitions
-- ⌨️ **Accessible** – Built with semantic HTML and ARIA best practices
-- 🚀 **Performance Optimized** – Fast loading with Next.js optimization
+-  **Real-time Search** – Filter articles by title or category instantly
+-  **Category Filtering** – Browse by Management, Technology, Workplace, or Finance
+-  **Fully Responsive** – Seamless experience on desktop, tablet, and mobile
+-  **Modern UI/UX** – Polished design with smooth hover effects and transitions
+-  **Accessible** – Built with semantic HTML and ARIA best practices
+-  **Performance Optimized** – Fast loading with Next.js optimization
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
@@ -29,7 +29,7 @@ knowledge-portal-next-4g0m0n3qd-leparan-felix-082a0a6f.vercel.app)*
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
