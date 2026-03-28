@@ -2,9 +2,10 @@
 
 A modern, responsive knowledge management portal built with **Next.js 16**. Features intuitive search, category filtering, and a clean, accessible UI designed for optimal content discovery.
 
-🔗 **Live Demo**: [https://your-project.vercel.app](https://your-project.vercel.app) *(replace with your actual Vercel URL)*
+🔗 **Live Demo**: [knowledge-portal-next.vercel.app](https://knowledge-portal-next.vercel.app/) 
+(knowledge-portal-next-git-main-leparan-felix-082a0a6f.vercel.app
+knowledge-portal-next-4g0m0n3qd-leparan-felix-082a0a6f.vercel.app)*
 
----
 
 ## ✨ Features
 
@@ -39,7 +40,7 @@ A modern, responsive knowledge management portal built with **Next.js 16**. Feat
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/knowledge-portal-next.git
+git clone https://github.com/leparan-felix/knowledge-portal-next.git
 cd knowledge-portal-next
 
 # 2. Install dependencies
