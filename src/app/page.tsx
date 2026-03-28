@@ -1,14 +1,13 @@
 // src/app/page.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-// ❌ REMOVE THIS LINE:
-// import Navbar from '@/components/Navbar'
 import { articles } from '@/data/mockArticles'
 
-export default function Home() {
+// Separate component that uses useSearchParams
+function DashboardContent() {
   const searchParams = useSearchParams()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
@@ -30,8 +29,6 @@ export default function Home() {
   })
 
   return (
-    // ❌ REMOVE the <Navbar /> JSX from here
-    // Keep only the content:
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8 px-4">
       <div className="max-w-4xl mx-auto">
         
@@ -72,7 +69,7 @@ export default function Home() {
           ))}
         </div>
 
-        {/* ✅ ADD SEARCH BAR BACK HERE (since Navbar search isn't connected) */}
+        {/* Search Bar */}
         <div className="mb-8">
           <input
             type="text"
@@ -134,5 +131,21 @@ export default function Home() {
         </div>
       </div>
     </div>
+  )
+}
+
+// Main page component with Suspense boundary
+export default function Home() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
   )
 }
