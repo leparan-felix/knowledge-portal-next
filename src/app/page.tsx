@@ -1,24 +1,13 @@
 // src/app/page.tsx
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useState } from 'react'
 import Link from 'next/link'
 import { articles } from '@/data/mockArticles'
 
-// Separate component that uses useSearchParams
-function DashboardContent() {
-  const searchParams = useSearchParams()
+export default function Home() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
-
-  // Get category from URL params
-  useEffect(() => {
-    const category = searchParams.get('category')
-    if (category) {
-      setSelectedCategory(category)
-    }
-  }, [searchParams])
 
   // Filter articles
   const filteredArticles = articles.filter(article => {
@@ -131,21 +120,5 @@ function DashboardContent() {
         </div>
       </div>
     </div>
-  )
-}
-
-// Main page component with Suspense boundary
-export default function Home() {
-  return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    }>
-      <DashboardContent />
-    </Suspense>
   )
 }
